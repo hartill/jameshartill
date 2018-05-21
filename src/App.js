@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = {
       posts: [],
-      selectedPost: undefined
+      selectedPost: undefined,
+      loading: true,
     }
     this.handlePostClick = this.handlePostClick.bind(this);
     this.handleClosePost = this.handleClosePost.bind(this);
@@ -24,7 +25,8 @@ class App extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({
-          posts: res
+          posts: res,
+          loading: false,
         })
       })
   }
@@ -48,7 +50,14 @@ class App extends Component {
   }
 
   render() {
-    let childElements = this.state.posts.map((post, index) => {
+
+    let loadingSpinner = (
+      <div className='loadingSpinner'>
+        <img className='loadingSVG' src ={require('./static/svg/Spin-1s-36px.svg')} alt='loading' />
+      </div>
+    )
+
+    let postTiles = this.state.posts.map((post, index) => {
       if (post.status === 'publish') {
         return (
           <PostTile
@@ -61,6 +70,12 @@ class App extends Component {
       }
     })
 
+    let content = (
+      <div className="post-grid">
+        { postTiles }
+      </div>
+    )
+
     if (this.state.selectedPost !== undefined) {
       return (
         <SinglePagePost post={this.state.selectedPost} handleClosePost={this.handleClosePost}/>
@@ -69,9 +84,7 @@ class App extends Component {
       return (
         <div className="App">
           <Header />
-          <div className="post-grid">
-            {childElements}
-          </div>
+          { this.state.loading ? loadingSpinner : content }
         </div>
       );
     }

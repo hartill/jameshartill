@@ -1,6 +1,27 @@
-body {
+html, body {
+  flex: 1;
+  display: flex;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: #DADADA;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  flex: 1;
+}
+
+a {
+  text-decoration:none;
+  color: #008073;
+}
+
+ul {
+  padding: 0 0 0 15px;
 }
