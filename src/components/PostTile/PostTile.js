@@ -30,7 +30,7 @@ class PostTile extends Component {
   }
 
   render() {
-    let imageSRC = this.props.post._embedded['wp:featuredmedia'][0].source_url
+    let image = this.props.post.image !== undefined ? require(`./../../static/images/${this.props.post.image}`) : null
     let iconContent = (
       this.state.backVisible ?
         <CloseIcon size='21' color='#008073' onClick={(e) => this.handleCloseIconClick(e)}/> :
@@ -38,8 +38,8 @@ class PostTile extends Component {
     )
 
     let frontContent = (
-      <div className={'post-tile-excerpt'}
-        dangerouslySetInnerHTML={{__html: this.props.post.excerpt.rendered}}>
+      <div className='post-tile-excerpt'>
+        <p>{ this.props.post.short_desc }</p>
       </div>
     )
 
@@ -47,10 +47,16 @@ class PostTile extends Component {
       <div className='post-tile-back'>
         <div className='post-tile-back-info'>
           {
-            this.props.post.key_points ?
+            this.props.post.long_desc ?
               (
-                <div className={'post-tile-excerpt'}
-                    dangerouslySetInnerHTML={{__html: this.props.post.key_points}}>
+                <div className={'post-tile-excerpt'}>
+                  <ul>
+                    {
+                      this.props.post.long_desc.map((line, index) => {
+                      return (<li key={index}>{ line }</li>)
+                      })
+                    }
+                  </ul>
                 </div>
               ) : null
           }
@@ -58,7 +64,7 @@ class PostTile extends Component {
         {
           this.props.post.external_url ?
             (
-              <a href={ this.props.post.external_url } target='new' className='button'>View</a>
+              <a href={ this.props.post.external_url } target='new' className='button'>View Project</a>
             ) : (
               <a onClick={(e) => this.props.handlePostClick(this.props.post, e)} className='button'>More</a>
             )
@@ -67,14 +73,14 @@ class PostTile extends Component {
     )
 
     return (
-      <div className='post-item' key={ this.props.post.id } /*onClick={(e) => this.props.handlePostClick(this.props.post, e)}*/>
+      <div className='post-item' key={this.props.post.id}>
         <div className='post-item-background'>
-          <img src={imageSRC} alt="img"/>
+          <img src={image} alt="img"/>
         </div>
-        <div className={ this.state.backVisible ? 'post-item-info zero-margin' : 'post-item-info' }>
+        <div  className={ this.state.backVisible ? 'post-item-info zero-margin' : 'post-item-info' }>
           <div className='post-tile-header'>
             <div className='post-tile-title'>
-              { this.props.post.title.rendered }
+              { this.props.post.title }
             </div>
             <div className='post-tile-icon'>
               { iconContent }

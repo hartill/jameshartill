@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-import SinglePagePost from './views/SinglePagePost'
+// import SinglePagePost from './views/SinglePagePost'
 import Header from './components/Header'
 import PostTile from './components/PostTile'
+
+import posts from './api/posts'
 
 import './App.css';
 
@@ -19,7 +21,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    let dataURL = 'http://localhost:8080/jameshartill/wordpress/index.php/wp-json/wp/v2/posts?_embed&per_page=20'
+    /*let dataURL = 'http://localhost:8080/jameshartill/wordpress/index.php/wp-json/wp/v2/posts?_embed&per_page=20'
     //let dataURL = 'http://www.jameshartill.com/wordpress/wp-json/wp/v2/posts?_embed'
     fetch(dataURL)
       .then(res => res.json())
@@ -28,11 +30,11 @@ class App extends Component {
           posts: res,
           loading: false,
         })
-      })
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    //console.log(nextState)
+      })*/
+    this.setState({
+      posts: posts,
+      loading: false,
+    })
   }
 
   handlePostClick(post, e) {
@@ -63,6 +65,7 @@ class App extends Component {
           <PostTile
             post={post}
             handlePostClick={this.handlePostClick}
+            key={index}
           />
         )
       } else {
@@ -76,18 +79,12 @@ class App extends Component {
       </div>
     )
 
-    if (this.state.selectedPost !== undefined) {
-      return (
-        <SinglePagePost post={this.state.selectedPost} handleClosePost={this.handleClosePost}/>
-      )
-    } else {
-      return (
-        <div className="App">
-          <Header />
-          { this.state.loading ? loadingSpinner : content }
-        </div>
-      );
-    }
+    return (
+      <div className="App">
+        <Header />
+        { this.state.loading ? loadingSpinner : content }
+      </div>
+    );
   }
 }
 

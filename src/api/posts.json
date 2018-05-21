@@ -1,0 +1,85 @@
+[
+  {
+    "id": "1",
+    "status": "publish",
+    "title": "Leben in Deutschland Quiz",
+    "image": "leben-web-app-feature.png",
+    "short_desc": "A React web application.",
+    "long_desc": [
+      "A training application for the German state integration exam.",
+      "User can select location and choose from three different practice modes.",
+      "User progress data is stored in a local cookie.",
+      "Animated SVGs created in After Effects."
+    ],
+    "category": "React Js",
+    "github": "https://github.com/hartill/leben-quiz",
+    "external_url": "http://lebenindeutschland.org"
+  },
+  {
+    "id": "2",
+    "status": "publish",
+    "title": "Leben in Deutschland Quiz (Native App)",
+    "image": "react-native-feature.png",
+    "short_desc": "A React Native application.",
+    "long_desc": [
+      "This is the native phone version of the Leben in Deutschland quiz app."
+    ],
+    "category": "React Js",
+    "github": "https://github.com/hartill/leben-quiz-native",
+    "external_url": "https://github.com/hartill/leben-quiz-native"
+  },
+  {
+    "id": "3",
+    "status": "publish",
+    "title": "Openschool.UK",
+    "image": "open-school-feature.png",
+    "short_desc": "An Online Leaning Application for Children.",
+    "long_desc": [
+      "The Open School is a development project I have worked on since 2010.",
+      "It is an e-learning website for children built in wordpress with custom theme and plugin developments."
+    ],
+    "category": "Wordpress",
+    "external_url": "http://openschool.uk"
+  },
+  {
+    "id": "4",
+    "status": "publish",
+    "title": "Ship-to-Turbine",
+    "image": "jfms-feature.jpg",
+    "short_desc": "3D Design, animation and production for JFMS",
+    "long_desc": [
+      "An animated video for James Fisher Marine Services.",
+      "Showcasing the Ship-To-Turbine oil transfer process.",
+      "All 3D modelling and animation was done in Solidworks and Cinema 4D."
+    ],
+    "category": "Animation",
+    "external_url": "https://www.youtube.com/watch?time_continue=6&v=zexEgUc0HEI"
+  },
+  {
+    "id": "5",
+    "status": "publish",
+    "title": "Mtindo",
+    "image": "mtindo-feature.jpg",
+    "short_desc": "Design and build of web shop",
+    "long_desc": [
+      "E-commerce website designed and built for Mtindo.",
+      "Created using Wordpress and the woocommerce plugin."
+    ],
+    "category": "Wordpress",
+    "external_url": "http://mtindo.xyz"
+  },
+  {
+    "id": "6",
+    "status": "publish",
+    "title": "Tiger X Ident",
+    "image": "tiger-x-feature.jpg",
+    "short_desc": "3D animated ident for Tiger X.",
+    "long_desc": [
+      "One of a few animated identity videos I made for Tiger X in the UK.",
+      "3D modelling and animation done in Cinema 4D.",
+      "Post-production in After Effects."
+    ],
+    "category": "Animation",
+    "external_url": "https://www.youtube.com/watch?v=CAlxO4nVpc0"
+  }
+]
