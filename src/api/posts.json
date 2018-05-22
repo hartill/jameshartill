@@ -58,18 +58,32 @@
   {
     "id": "5",
     "status": "publish",
-    "title": "Mtindo",
-    "image": "mtindo-feature.jpg",
-    "short_desc": "Design and build of web shop",
+    "title": "Ship-to-Turbine",
+    "image": "jfms-feature.jpg",
+    "short_desc": "3D Design, animation and production for JFMS",
     "long_desc": [
-      "E-commerce website designed and built for Mtindo.",
-      "Created using Wordpress and the woocommerce plugin."
+      "An animated video for James Fisher Marine Services.",
+      "Showcasing the Ship-To-Turbine oil transfer process.",
+      "All 3D modelling and animation was done in Solidworks and Cinema 4D."
     ],
-    "category": "Wordpress",
-    "external_url": "http://mtindo.xyz"
+    "category": "Animation",
+    "external_url": "https://www.youtube.com/watch?time_continue=6&v=zexEgUc0HEI"
   },
   {
     "id": "6",
+    "status": "publish",
+    "title": "Popposites",
+    "image": null,
+    "short_desc": "HTML5 Game",
+    "long_desc": [
+      "A HTML5 Js game I developed to help children learn vocabulary.",
+      "Programmed in vanilla Js."
+    ],
+    "category": "Vanilla Js",
+    "external_url": "http://popposites.jameshartill.com"
+  },
+  {
+    "id": "7",
     "status": "publish",
     "title": "Tiger X Ident",
     "image": "tiger-x-feature.jpg",

@@ -17,8 +17,13 @@
   height: auto;
 }
 
-.post-item-background {
+.post-item-background-image {
   flex: 1;
+}
+
+.post-item-background-color {
+  flex: 1;
+  background-color: #e74c3c;
 }
 
 .post-item-info {
@@ -79,6 +84,20 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.post-tile-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .dark-purple {

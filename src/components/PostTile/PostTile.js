@@ -4,6 +4,7 @@ import './postTile.css'
 
 import MoreIcon from 'react-icons/lib/md/more-vert'
 import CloseIcon from 'react-icons/lib/md/close'
+import LinkIcon from 'react-icons/lib/md/link'
 
 class PostTile extends Component {
   constructor(props){
@@ -30,7 +31,7 @@ class PostTile extends Component {
   }
 
   render() {
-    let image = this.props.post.image !== undefined ? require(`./../../static/images/${this.props.post.image}`) : null
+    let image = this.props.post.image ? require(`./../../static/images/${this.props.post.image}`) : null
     let iconContent = (
       this.state.backVisible ?
         <CloseIcon size='21' color='#008073' onClick={(e) => this.handleCloseIconClick(e)}/> :
@@ -61,21 +62,21 @@ class PostTile extends Component {
               ) : null
           }
         </div>
+        <div className='post-tile-actions'>
         {
           this.props.post.external_url ?
             (
-              <a href={ this.props.post.external_url } target='new' className='button'>View Project</a>
-            ) : (
-              <a onClick={(e) => this.props.handlePostClick(this.props.post, e)} className='button'>More</a>
-            )
+              <a href={ this.props.post.external_url } target='new' className='icon-button'> <LinkIcon size='21' color='#008073'/> </a>
+            ) : null
         }
+        </div>
       </div>
     )
 
     return (
       <div className='post-item' key={this.props.post.id}>
-        <div className='post-item-background'>
-          <img src={image} alt="img"/>
+        <div className={image === null ? 'post-item-background-color' : 'post-item-background-image'}>
+          { image !== null ? <img src={image} alt="img"/> : null}
         </div>
         <div  className={ this.state.backVisible ? 'post-item-info zero-margin' : 'post-item-info' }>
           <div className='post-tile-header'>
