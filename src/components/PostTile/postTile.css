@@ -88,7 +88,7 @@
 
 .post-tile-actions {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -98,6 +98,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.icon-button img {
+  width: 32px;
+  height: 32px;
 }
 
 .dark-purple {

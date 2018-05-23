@@ -5,6 +5,7 @@ import './postTile.css'
 import MoreIcon from 'react-icons/lib/md/more-vert'
 import CloseIcon from 'react-icons/lib/md/close'
 import LinkIcon from 'react-icons/lib/md/link'
+import GitLogo from'../../static/images/GitHub-Mark-32px.png';
 
 class PostTile extends Component {
   constructor(props){
@@ -66,7 +67,17 @@ class PostTile extends Component {
         {
           this.props.post.external_url ?
             (
-              <a href={ this.props.post.external_url } target='new' className='icon-button'> <LinkIcon size='21' color='#008073'/> </a>
+              <a href={ this.props.post.external_url } target='new' className='icon-button'>
+                <LinkIcon size='32' color='#008073'/>
+                </a>
+            ) : null
+        }
+        {
+          this.props.post.github_url ?
+            (
+              <a href={ this.props.post.github_url } target='new' className='icon-button'>
+                <img src={ GitLogo } alt="img"/>
+              </a>
             ) : null
         }
         </div>
