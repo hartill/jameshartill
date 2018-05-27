@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import SinglePagePost from './views/SinglePagePost'
 import Header from './components/Header'
 import PostTile from './components/PostTile'
+import FeatureTile from './components/FeatureTile'
 
 import posts from './api/posts'
 
@@ -75,6 +76,7 @@ class App extends Component {
 
     let content = (
       <div className="post-grid">
+        <FeatureTile />
         { postTiles }
       </div>
     )

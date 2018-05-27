@@ -11,10 +11,41 @@ class PostTile extends Component {
   constructor(props){
     super(props);
     this.state = {
-      backVisible: false
+      backVisible: false,
+      tileWidth: 0,
+      titleHeight: 0,
+      tileColor: ''
     }
     this.handleMoreIconClick = this.handleMoreIconClick.bind(this)
     this.handleCloseIconClick = this.handleCloseIconClick.bind(this)
+    this.updateDimensions = this.updateDimensions.bind(this)
+  }
+
+  updateDimensions() {
+    const width = document.getElementById('post-item-' + this.props.post.id ).clientWidth
+    const titleHeight = document.getElementById( 'post-tile-title-'  + this.props.post.id ).clientHeight
+
+    this.setState({
+      tileWidth: width,
+      titleHeight: titleHeight
+    })
+  }
+
+  componentWillMount() {
+    let backgroundColors = ['#008073', '#e74c3c', '#126DB3']
+    let backgroundColor = backgroundColors[Math.floor(Math.random()*backgroundColors.length)]
+    this.setState({
+      tileColor: backgroundColor
+    })
+  }
+
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
   }
 
   handleMoreIconClick(e) {
@@ -37,12 +68,6 @@ class PostTile extends Component {
       this.state.backVisible ?
         <CloseIcon size='21' color='#008073' onClick={(e) => this.handleCloseIconClick(e)}/> :
         <MoreIcon size='21' color='#008073' onClick={(e) => this.handleMoreIconClick(e)}/>
-    )
-
-    let frontContent = (
-      <div className='post-tile-excerpt'>
-        <p>{ this.props.post.short_desc }</p>
-      </div>
     )
 
     let backContent = (
@@ -68,7 +93,7 @@ class PostTile extends Component {
           this.props.post.external_url ?
             (
               <a href={ this.props.post.external_url } target='new' className='icon-button'>
-                <LinkIcon size='32' color='#008073'/>
+                <LinkIcon size='21' color='#008073'/>
                 </a>
             ) : null
         }
@@ -85,20 +110,30 @@ class PostTile extends Component {
     )
 
     return (
-      <div className='post-item' key={this.props.post.id}>
-        <div className={image === null ? 'post-item-background-color' : 'post-item-background-image'}>
+      <div id={ 'post-item-' + this.props.post.id }
+        className='post-item'
+        style={{ height: this.state.tileWidth, backgroundColor: this.state.tileColor }}
+        key={ this.props.post.id }>
+        <div className={image === null ? '' : 'post-item-background-image'}>
           { image !== null ? <img src={image} alt="img"/> : null}
         </div>
-        <div  className={ this.state.backVisible ? 'post-item-info zero-margin' : 'post-item-info' }>
+        <div
+          className='post-item-info'
+          style={
+            this.state.backVisible ?
+              { height: this.state.tileWidth }:
+              this.state.titleHeight > 30 ?
+                { height: 62 } :
+              { height: 50 } }>
           <div className='post-tile-header'>
-            <div className='post-tile-title'>
+            <div id={ 'post-tile-title-'  + this.props.post.id } className='post-tile-title'>
               { this.props.post.title }
             </div>
             <div className='post-tile-icon'>
               { iconContent }
             </div>
           </div>
-          { this.state.backVisible ? backContent : frontContent }
+          { this.state.backVisible ? backContent : null }
         </div>
       </div>
     )

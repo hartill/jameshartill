@@ -3,13 +3,12 @@
     "id": "1",
     "status": "publish",
     "title": "Leben in Deutschland Quiz",
-    "image": "leben-web-app-feature.png",
+    "image": "leben-in-deutschland.jpg",
     "short_desc": "A React web application.",
     "long_desc": [
-      "A training application for the German state integration exam.",
-      "User can select location and choose from three different practice modes.",
-      "User progress data is stored in a local cookie.",
-      "Animated SVGs created in After Effects."
+      "A React web application.",
+      "Provides a training platform for the German state integration exam.",
+      "User can select location and choose from three different practice modes."
     ],
     "category": "React Js",
     "github_url": "https://github.com/hartill/leben-quiz",
@@ -19,10 +18,12 @@
     "id": "2",
     "status": "publish",
     "title": "Leben in Deutschland Quiz (Native App)",
-    "image": "react-native-feature.png",
+    "image": "",
     "short_desc": "A React Native application.",
     "long_desc": [
-      "This is the native phone version of the Leben in Deutschland quiz app."
+      "A React Native application for Android and IOS.",
+      "Same as the Leben in Deutschland web app.",
+      "WIP."
     ],
     "category": "React Js",
     "github_url": "https://github.com/hartill/leben-quiz-native"

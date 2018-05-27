@@ -1,0 +1,10 @@
+.feature-tile {
+  background-color: #443642;
+  color: #ffffff;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}

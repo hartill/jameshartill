@@ -14,3 +14,9 @@ header {
   font-weight: 100;
   color: #008073;
 }
+
+@media only screen and (max-width: 799px) {
+  header {
+    justify-content: center;
+  }
+}
