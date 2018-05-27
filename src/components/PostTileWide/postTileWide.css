@@ -1,0 +1,31 @@
+.post-item-wide {
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.post-item-background-image-small-wide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-item-background-image-small-wide img {
+  width: 40%;
+  height: auto;
+}
+
+.post-item-info-wide {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 15px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+}

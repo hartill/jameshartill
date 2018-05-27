@@ -1,36 +1,45 @@
 [
   {
+    "id": "0",
+    "status": "publish",
+    "type": "feature",
+    "text": "Hello, I am a designer and developer. Here you will find some projects I have worked on."
+  },
+  {
     "id": "1",
     "status": "publish",
+    "type": "project",
     "title": "Leben in Deutschland Quiz",
-    "image": "leben-in-deutschland.jpg",
+    "size": "wide",
+    "small_image": "react-logo-150.png",
     "short_desc": "A React web application.",
     "long_desc": [
       "A React web application.",
       "Provides a training platform for the German state integration exam.",
       "User can select location and choose from three different practice modes."
     ],
-    "category": "React Js",
+    "category": "ReactJs",
     "github_url": "https://github.com/hartill/leben-quiz",
     "external_url": "http://lebenindeutschland.org"
   },
   {
     "id": "2",
     "status": "publish",
+    "type": "project",
     "title": "Leben in Deutschland Quiz (Native App)",
-    "image": "",
     "short_desc": "A React Native application.",
     "long_desc": [
       "A React Native application for Android and IOS.",
       "Same as the Leben in Deutschland web app.",
       "WIP."
     ],
-    "category": "React Js",
+    "category": "ReactJs",
     "github_url": "https://github.com/hartill/leben-quiz-native"
   },
   {
     "id": "3",
     "status": "publish",
+    "type": "project",
     "title": "Openschool.UK",
     "image": "open-school-feature.png",
     "short_desc": "An Online Leaning Application for Children.",
@@ -44,6 +53,14 @@
   {
     "id": "4",
     "status": "publish",
+    "type": "photo",
+    "image": "french-alps-09.jpg",
+    "category": "Photography"
+  },
+  {
+    "id": "5",
+    "status": "publish",
+    "type": "project",
     "title": "Ship-to-Turbine",
     "image": "jfms-feature.jpg",
     "short_desc": "3D Design, animation and production for JFMS",
@@ -58,8 +75,9 @@
   {
     "id": "6",
     "status": "publish",
+    "type": "project",
     "title": "Popposites",
-    "image": null,
+    "small_image": "white-bubble-01.png",
     "short_desc": "HTML5 Game",
     "long_desc": [
       "A HTML5 Js game I developed to help children learn vocabulary.",
@@ -72,6 +90,7 @@
   {
     "id": "7",
     "status": "publish",
+    "type": "project",
     "title": "Tiger X Ident",
     "image": "tiger-x-feature.jpg",
     "short_desc": "3D animated ident for Tiger X.",
@@ -86,6 +105,7 @@
   {
     "id": "8",
     "status": "publish",
+    "type": "project",
     "title": "Mtindo",
     "image": "mtindo-feature.jpg",
     "short_desc": "Webshop design and build",

@@ -22,8 +22,11 @@ class PostTile extends Component {
   }
 
   updateDimensions() {
-    const width = document.getElementById('post-item-' + this.props.post.id ).clientWidth
-    const titleHeight = document.getElementById( 'post-tile-title-'  + this.props.post.id ).clientHeight
+    let width = document.getElementById('post-item-' + this.props.post.id ).clientWidth
+
+    let titleHeight = document.getElementById('post-tile-title-'  + this.props.post.id) !=null ?
+      document.getElementById( 'post-tile-title-'  + this.props.post.id ).clientHeight :
+      0
 
     this.setState({
       tileWidth: width,
@@ -32,7 +35,12 @@ class PostTile extends Component {
   }
 
   componentWillMount() {
-    let backgroundColors = ['#008073', '#e74c3c', '#126DB3']
+    let backgroundColors = [
+      '#008073',
+      //'#e74c3c',
+      '#443642',
+      '#126DB3'
+    ]
     let backgroundColor = backgroundColors[Math.floor(Math.random()*backgroundColors.length)]
     this.setState({
       tileColor: backgroundColor
@@ -40,12 +48,12 @@ class PostTile extends Component {
   }
 
   componentDidMount() {
-    this.updateDimensions();
-    window.addEventListener("resize", this.updateDimensions);
+    this.updateDimensions()
+    window.addEventListener("resize", this.updateDimensions)
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions);
+    window.removeEventListener("resize", this.updateDimensions)
   }
 
   handleMoreIconClick(e) {
@@ -64,6 +72,7 @@ class PostTile extends Component {
 
   render() {
     let image = this.props.post.image ? require(`./../../static/images/${this.props.post.image}`) : null
+    let smallImage = this.props.post.small_image ? require(`./../../static/images/${this.props.post.small_image}`) : null
     let iconContent = (
       this.state.backVisible ?
         <CloseIcon size='21' color='#008073' onClick={(e) => this.handleCloseIconClick(e)}/> :
@@ -111,12 +120,32 @@ class PostTile extends Component {
 
     return (
       <div id={ 'post-item-' + this.props.post.id }
-        className='post-item'
-        style={{ height: this.state.tileWidth, backgroundColor: this.state.tileColor }}
+        className= 'post-item'
+        style={{
+          left: this.props.tileX,
+          top: this.props.tileY,
+          height: this.props.singleTileWidth,
+          backgroundColor: this.state.tileColor,
+          width: this.props.singleTileWidth
+        }}
         key={ this.props.post.id }>
-        <div className={image === null ? '' : 'post-item-background-image'}>
-          { image !== null ? <img src={image} alt="img"/> : null}
-        </div>
+        {
+          image !== null ?
+          (
+            <div className='post-item-background-image'>
+              <img src={image} alt="img"/>
+            </div>
+          ) :  null
+        }
+
+        {
+          smallImage !== null ?
+          (
+            <div className='post-item-background-image-small'>
+              <img src={smallImage} alt="img"/>
+            </div>
+          ) :  null
+        }
         <div
           className='post-item-info'
           style={

@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Header from './components/Header'
 import PostTile from './components/PostTile'
 import FeatureTile from './components/FeatureTile'
+import PostTileImage from './components/PostTileImage'
+import PostTileWide from './components/PostTileWide'
 
 import posts from './api/posts'
 
@@ -14,11 +16,10 @@ class App extends Component {
     super(props);
     this.state = {
       posts: [],
-      selectedPost: undefined,
       loading: true,
+      windowWidth: 0,
     }
-    this.handlePostClick = this.handlePostClick.bind(this);
-    this.handleClosePost = this.handleClosePost.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this)
   }
 
   componentDidMount(){
@@ -38,18 +39,22 @@ class App extends Component {
     })
   }
 
-  handlePostClick(post, e) {
-    e.preventDefault();
+  updateDimensions() {
+    //let width = window.innerWidth
+    let width = document.documentElement.clientWidth || document.body.clientWidth
+
     this.setState({
-      selectedPost: post
-    });
+      windowWidth: width,
+    })
   }
 
-  handleClosePost(e) {
-    e.preventDefault();
-    this.setState({
-      selectedPost: undefined
-    });
+  componentWillMount() {
+    this.updateDimensions()
+    window.addEventListener("resize", this.updateDimensions)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions)
   }
 
   render() {
@@ -59,16 +64,76 @@ class App extends Component {
         <img className='loadingSVG' src ={require('./static/svg/Spin-1s-36px.svg')} alt='loading' />
       </div>
     )
+    let windowWidth = this.state.windowWidth
+    let numberPerRow = Math.ceil(windowWidth/400)
+
+    let margin = 20
+
+    let singleTileWidth = (windowWidth - ((numberPerRow - 1) * margin)) / numberPerRow
+    let tileX = 0
+    let tileY = 0
+
+    let doubleTileWidth = (singleTileWidth * 2) + margin
+    let countOffset = 0
 
     let postTiles = this.state.posts.map((post, index) => {
+
+      let count = index + 1 + countOffset
       if (post.status === 'publish') {
-        return (
-          <PostTile
-            post={post}
-            handlePostClick={this.handlePostClick}
-            key={index}
-          />
-        )
+        if (index > 0) {
+          if ((count-1)%numberPerRow !== 0) {
+            tileX += (singleTileWidth + margin)
+          } else {
+            tileX = 0
+            tileY += (singleTileWidth + margin)
+          }
+        }
+        if (post.type === 'feature') {
+          return (
+            <FeatureTile
+              post={post}
+              key={index}
+              tileX={tileX}
+              tileY={tileY}
+              singleTileWidth={singleTileWidth}
+            />
+          )
+        } else if (post.type === 'photo') {
+          return (
+            <PostTileImage
+              post={post}
+              key={index}
+              tileX={tileX}
+              tileY={tileY}
+              singleTileWidth={singleTileWidth}
+            />
+          )
+        } else if ((post.size === 'wide') && (count%numberPerRow !== 0)) {
+          let thisX = tileX
+          let thisY = tileY
+          tileX += (singleTileWidth + margin)
+          countOffset += 1
+          return (
+            <PostTileWide
+              post={post}
+              key={index}
+              tileX={thisX}
+              tileY={thisY}
+              width={doubleTileWidth}
+              height={singleTileWidth}
+            />
+          )
+        } else {
+          return (
+            <PostTile
+              post={post}
+              key={index}
+              tileX={tileX}
+              tileY={tileY}
+              singleTileWidth={singleTileWidth}
+            />
+          )
+        }
       } else {
         return null
       }
@@ -76,7 +141,6 @@ class App extends Component {
 
     let content = (
       <div className="post-grid">
-        <FeatureTile />
         { postTiles }
       </div>
     )
