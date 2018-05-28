@@ -20,7 +20,11 @@ class PostTileWide extends Component {
       '#443642',
       '#126DB3'
     ]
-    let backgroundColor = backgroundColors[Math.floor(Math.random()*backgroundColors.length)]
+
+    let backgroundColor = this.props.post.background_color ?
+                            this.props.post.background_color :
+                            backgroundColors[Math.floor(Math.random()*backgroundColors.length)]
+
     this.setState({
       tileColor: backgroundColor
     })
@@ -67,6 +71,7 @@ class PostTileWide extends Component {
           ) :  null
         }
         <div className='post-item-info-wide'>
+        <div className="arrow-left"></div>
           <div className='post-tile-header'>
             <div id={ 'post-tile-title-'  + this.props.post.id } className='post-tile-title'>
               { this.props.post.title }

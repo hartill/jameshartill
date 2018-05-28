@@ -41,7 +41,9 @@ class PostTile extends Component {
       '#443642',
       '#126DB3'
     ]
-    let backgroundColor = backgroundColors[Math.floor(Math.random()*backgroundColors.length)]
+    let backgroundColor = this.props.post.background_color ?
+                            this.props.post.background_color :
+                            backgroundColors[Math.floor(Math.random()*backgroundColors.length)]
     this.setState({
       tileColor: backgroundColor
     })

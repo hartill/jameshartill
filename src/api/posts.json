@@ -3,7 +3,7 @@
     "id": "0",
     "status": "publish",
     "type": "feature",
-    "text": "Hello, I am a designer and developer. Here you will find some projects I have worked on."
+    "text": "Hello, I am a designer and developer. Here you will find some of the projects (professional and pastime) that I have worked on."
   },
   {
     "id": "1",
@@ -12,7 +12,7 @@
     "title": "Leben in Deutschland Quiz",
     "size": "wide",
     "small_image": "react-logo-150.png",
-    "short_desc": "A React web application.",
+    "background_color": "#00d8ff",
     "long_desc": [
       "A React web application.",
       "Provides a training platform for the German state integration exam.",
@@ -27,7 +27,7 @@
     "status": "publish",
     "type": "project",
     "title": "Leben in Deutschland Quiz (Native App)",
-    "short_desc": "A React Native application.",
+    "small_image": "leben_app_iphone.png",
     "long_desc": [
       "A React Native application for Android and IOS.",
       "Same as the Leben in Deutschland web app.",

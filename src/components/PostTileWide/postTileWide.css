@@ -7,6 +7,7 @@
 }
 
 .post-item-background-image-small-wide {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,14 +19,28 @@
 }
 
 .post-item-info-wide {
+  position: relative;
   flex: 1;
   background-color: #ffffff;
   padding: 15px;
   padding-left: 40px;
   box-sizing: border-box;
-  overflow: hidden;
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
   justify-content: space-between;
+  line-height: 24px;
+}
+
+.arrow-left {
+  position: absolute;
+  top: calc(50% - 16px);
+  left: -16px;
+  z-index: 5;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+
+  border-right: 16px solid white;
 }

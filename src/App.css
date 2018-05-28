@@ -8,14 +8,19 @@
   display: flex;
   flex-flow: column;
   font-family: 'Montserrat', sans-serif;
+  line-height: 21px;
   color: #444444;
   font-size: 14px;
 }
 
 .post-grid {
-  margin-top: 20px;
   flex: 1;
   position: relative;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .loadingSpinner {

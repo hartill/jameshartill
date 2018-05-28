@@ -40,8 +40,9 @@ class App extends Component {
   }
 
   updateDimensions() {
-    //let width = window.innerWidth
     let width = document.documentElement.clientWidth || document.body.clientWidth
+     width = width < 340 ? 340 : width
+    width -= 40
 
     this.setState({
       windowWidth: width,
@@ -65,13 +66,13 @@ class App extends Component {
       </div>
     )
     let windowWidth = this.state.windowWidth
-    let numberPerRow = Math.ceil(windowWidth/400)
+    let numberPerRow = Math.ceil(windowWidth/500)
 
     let margin = 20
 
     let singleTileWidth = (windowWidth - ((numberPerRow - 1) * margin)) / numberPerRow
-    let tileX = 0
-    let tileY = 0
+    let tileX = 20
+    let tileY = 20
 
     let doubleTileWidth = (singleTileWidth * 2) + margin
     let countOffset = 0
@@ -84,7 +85,7 @@ class App extends Component {
           if ((count-1)%numberPerRow !== 0) {
             tileX += (singleTileWidth + margin)
           } else {
-            tileX = 0
+            tileX = 20
             tileY += (singleTileWidth + margin)
           }
         }
@@ -137,6 +138,7 @@ class App extends Component {
       } else {
         return null
       }
+
     })
 
     let content = (
