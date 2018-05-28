@@ -12,13 +12,13 @@
   padding: 16px;
 }
 
-.post-item img {
-  width: 100%;
-  height: auto;
-}
-
 .post-item-background-image {
   flex: 1;
+}
+
+.post-item-background-image img {
+  width: 100%;
+  height: auto;
 }
 
 .post-item-background-image-small {
@@ -108,6 +108,14 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 21px;
+  height: 21px;
 }
 
 .icon-button img {

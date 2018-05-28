@@ -11,7 +11,7 @@
     "type": "project",
     "title": "Leben in Deutschland Quiz",
     "size": "wide",
-    "small_image": "react-logo-150.png",
+    "small_image": "react-logo-300.png",
     "background_color": "#00d8ff",
     "long_desc": [
       "A React web application.",
@@ -27,7 +27,7 @@
     "status": "publish",
     "type": "project",
     "title": "Leben in Deutschland Quiz (Native App)",
-    "small_image": "leben_app_iphone.png",
+    "image": "leben_app_iphone.png",
     "long_desc": [
       "A React Native application for Android and IOS.",
       "Same as the Leben in Deutschland web app.",
@@ -91,6 +91,7 @@
     "id": "7",
     "status": "publish",
     "type": "project",
+    "size": "wide",
     "title": "Tiger X Ident",
     "image": "tiger-x-feature.jpg",
     "short_desc": "3D animated ident for Tiger X.",

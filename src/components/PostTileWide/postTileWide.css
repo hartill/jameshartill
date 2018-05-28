@@ -44,3 +44,8 @@
 
   border-right: 16px solid white;
 }
+
+.post-item-background-image-wide img {
+  width: 100%;
+  height: auto;
+}

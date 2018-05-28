@@ -20,6 +20,21 @@ class App extends Component {
       windowWidth: 0,
     }
     this.updateDimensions = this.updateDimensions.bind(this)
+    this.loadImage = this.loadImage.bind(this)
+  }
+
+  loadImage(images) {
+    if (images.length) {
+      let imagePath = require(`./static/images/${images[0]}`)
+      let img = new Image()
+      images.splice(0,1)
+      img.onLoad = this.loadImage(images)
+      img.src = imagePath
+    } else {
+      this.setState({
+        loading: false,
+      })
+    }
   }
 
   componentDidMount(){
@@ -33,9 +48,22 @@ class App extends Component {
           loading: false,
         })
       })*/
+
+    let allImages = []
+
+    for (let i=0; i<posts.length; i++) {
+      if (posts[i].image) {
+        allImages.push(posts[i].image)
+      }
+      if (posts[i].small_image) {
+        allImages.push(posts[i].small_image)
+      }
+    }
+
+    this.loadImage(allImages)
+
     this.setState({
       posts: posts,
-      loading: false,
     })
   }
 
@@ -62,7 +90,11 @@ class App extends Component {
 
     let loadingSpinner = (
       <div className='loadingSpinner'>
-        <img className='loadingSVG' src ={require('./static/svg/Spin-1s-36px.svg')} alt='loading' />
+        <div className="spinner">
+          <div className="bounce1"></div>
+          <div className="bounce2"></div>
+          <div className="bounce3"></div>
+        </div>
       </div>
     )
     let windowWidth = this.state.windowWidth
