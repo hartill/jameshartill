@@ -5,14 +5,14 @@ import './postTile.css'
 import MoreIcon from 'react-icons/lib/md/more-vert'
 import CloseIcon from 'react-icons/lib/md/close'
 import LinkIcon from 'react-icons/lib/md/link'
-import GitLogo from'../../static/images/GitHub-Mark-32px.png';
+import GitLogo from '../../static/images/GitHub-Mark-32px.png'
+import GooglePlayLogo from '../../static/images/google-play-badge-sm.png'
 
 class PostTile extends Component {
   constructor(props){
     super(props);
     this.state = {
       backVisible: false,
-      tileWidth: 0,
       titleHeight: 0,
       tileColor: ''
     }
@@ -22,14 +22,11 @@ class PostTile extends Component {
   }
 
   updateDimensions() {
-    let width = document.getElementById('post-item-' + this.props.post.id ).clientWidth
-
     let titleHeight = document.getElementById('post-tile-title-'  + this.props.post.id) !=null ?
       document.getElementById( 'post-tile-title-'  + this.props.post.id ).clientHeight :
       0
 
     this.setState({
-      tileWidth: width,
       titleHeight: titleHeight
     })
   }
@@ -39,7 +36,7 @@ class PostTile extends Component {
       '#008073',
       //'#e74c3c',
       '#443642',
-      '#126DB3'
+      //'#126DB3'
     ]
     let backgroundColor = this.props.post.background_color ?
                             this.props.post.background_color :
@@ -105,7 +102,15 @@ class PostTile extends Component {
             (
               <a href={ this.props.post.external_url } target='new' className='icon-button'>
                 <LinkIcon size='21' color='#008073'/>
-                </a>
+              </a>
+            ) : null
+        }
+        {
+          this.props.post.play_store_url ?
+            (
+              <a href={ this.props.post.play_store_url } target='new'>
+                <img src={ GooglePlayLogo } alt="img"/>
+              </a>
             ) : null
         }
         {
@@ -152,7 +157,7 @@ class PostTile extends Component {
           className='post-item-info'
           style={
             this.state.backVisible ?
-              { height: this.state.tileWidth }:
+              { height: this.props.singleTileWidth } :
               this.state.titleHeight > 30 ?
                 { height: 62 } :
               { height: 50 } }>

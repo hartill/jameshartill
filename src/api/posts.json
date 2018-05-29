@@ -12,7 +12,7 @@
     "title": "Leben in Deutschland Quiz",
     "size": "wide",
     "small_image": "react-logo-300.png",
-    "background_color": "#00d8ff",
+    "background_color": "#3e4651",
     "long_desc": [
       "A React web application.",
       "Provides a training platform for the German state integration exam.",
@@ -27,11 +27,12 @@
     "status": "publish",
     "type": "project",
     "title": "Leben in Deutschland Quiz (Native App)",
-    "image": "leben_app_iphone.png",
+    "small_image": "leben-in-deutschland-test-iconx300.png",
+    "background_color": "#3e4651",
+    "play_store_url": "https://play.google.com/store/apps/details?id=com.jameshartill.leben_in_deutschland_test",
     "long_desc": [
-      "A React Native application for Android and IOS.",
-      "Same as the Leben in Deutschland web app.",
-      "WIP."
+      "A native mobile application for Android and IOS.",
+      "Same functionality as the Leben in Deutschland web app."
     ],
     "category": "ReactJs",
     "github_url": "https://github.com/hartill/leben-quiz-native"
@@ -76,21 +77,6 @@
     "id": "6",
     "status": "publish",
     "type": "project",
-    "title": "Popposites",
-    "small_image": "white-bubble-01.png",
-    "short_desc": "HTML5 Game",
-    "long_desc": [
-      "A HTML5 Js game I developed to help children learn vocabulary.",
-      "Programmed in vanilla Js."
-    ],
-    "category": "Vanilla Js",
-    "external_url": "http://popposites.jameshartill.com",
-    "github_url": "https://github.com/hartill/popposites"
-  },
-  {
-    "id": "7",
-    "status": "publish",
-    "type": "project",
     "size": "wide",
     "title": "Tiger X Ident",
     "image": "tiger-x-feature.jpg",
@@ -104,7 +90,7 @@
     "external_url": "https://www.youtube.com/watch?v=CAlxO4nVpc0"
   },
   {
-    "id": "8",
+    "id": "7",
     "status": "publish",
     "type": "project",
     "title": "Mtindo",
@@ -116,5 +102,21 @@
     ],
     "category": "Wordpress",
     "external_url": "http://mtindo.xyz"
+  },
+  {
+    "id": "8",
+    "status": "publish",
+    "type": "project",
+    "title": "Popposites",
+    "image": "html-5.png",
+    "background_color": "#443642",
+    "short_desc": "HTML5 Game",
+    "long_desc": [
+      "A HTML5 Js game I developed to help children learn vocabulary.",
+      "Programmed in vanilla Js."
+    ],
+    "category": "Vanilla Js",
+    "external_url": "http://popposites.jameshartill.com",
+    "github_url": "https://github.com/hartill/popposites"
   }
 ]
