@@ -4,6 +4,7 @@ import './postTileWide.css'
 
 import LinkIcon from 'react-icons/lib/md/link'
 import GitLogo from'../../static/images/GitHub-Mark-32px.png';
+import GooglePlayLogo from '../../static/images/google-play-badge-sm.png'
 
 class PostTileWide extends Component {
   constructor(props){
@@ -100,7 +101,15 @@ class PostTileWide extends Component {
                 (
                   <a href={ this.props.post.external_url } target='new' className='icon-button'>
                     <LinkIcon size='21' color='#008073'/>
-                    </a>
+                  </a>
+                ) : null
+            }
+            {
+              this.props.post.play_store_url ?
+                (
+                  <a href={ this.props.post.play_store_url } target='new'>
+                    <img src={ GooglePlayLogo } alt="img"/>
+                  </a>
                 ) : null
             }
             {

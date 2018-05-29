@@ -26,6 +26,7 @@
     "id": "2",
     "status": "publish",
     "type": "project",
+    "size": "wide",
     "title": "Leben in Deutschland Quiz (Native App)",
     "small_image": "leben-in-deutschland-test-iconx300.png",
     "background_color": "#3e4651",
