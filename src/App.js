@@ -18,6 +18,7 @@ class App extends Component {
       posts: [],
       loading: true,
       windowWidth: 0,
+      postGridHeight: 0,
     }
     this.updateDimensions = this.updateDimensions.bind(this)
     this.loadImage = this.loadImage.bind(this)
@@ -185,7 +186,9 @@ class App extends Component {
     })
 
     let content = (
-      <div className="post-grid">
+      <div
+        className="post-grid"
+      >
         { postTiles }
       </div>
     )
@@ -193,7 +196,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        { this.state.loading ? loadingSpinner : content }
+        <div className="ContentContainer">
+          { this.state.loading ? loadingSpinner : content }
+        </div>
       </div>
     );
   }
