@@ -79,11 +79,22 @@ class App extends Component {
 
   componentWillMount() {
     this.updateDimensions()
-    window.addEventListener("resize", this.updateDimensions)
+
+    let timeout = null
+
+    window.addEventListener("resize", (event) => {
+      if ( !timeout ) {
+        timeout = setTimeout(() => {
+          // Reset timeout
+          timeout = null
+          this.updateDimensions()
+        }, 66)
+      }
+    }, false)
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions)
+    window.removeEventListener("resize", this.timeoutResizeEvent())
   }
 
   render() {

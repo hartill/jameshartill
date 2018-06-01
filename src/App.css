@@ -11,6 +11,7 @@
   line-height: 21px;
   color: #444444;
   font-size: 14px;
+  overflow-y: auto;
 }
 
 .hiddenPreloader {
@@ -20,7 +21,6 @@
 .post-grid {
   flex: 1;
   position: relative;
-  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
