@@ -18,18 +18,8 @@
   display: none;
 }
 
-.ContentContainer {
-  position: absolute;
-  margin-top: 60px;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-  display: flex;
-}
-
 .post-grid {
+  margin-top: 60px;
   position: relative;
   flex: 1;
 }

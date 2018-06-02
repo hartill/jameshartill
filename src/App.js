@@ -186,19 +186,21 @@ class App extends Component {
     })
 
     let content = (
-      <div
-        className="post-grid"
-      >
+      <div className="post-grid">
         { postTiles }
+        <div style={{
+          'position': 'absolute',
+          'height': '20px',
+          'top': tileY + singleTileWidth,
+          'width': '100%'
+        }}/>
       </div>
     )
 
     return (
       <div className="App">
         <Header />
-        <div className="ContentContainer">
-          { this.state.loading ? loadingSpinner : content }
-        </div>
+        { this.state.loading ? loadingSpinner : content }
       </div>
     );
   }
