@@ -24,6 +24,16 @@ class App extends Component {
     this.loadImage = this.loadImage.bind(this)
   }
 
+  updateDimensions() {
+    let width = document.documentElement.clientWidth || document.body.clientWidth
+     width = width < 340 ? 340 : width
+    width -= 40
+
+    this.setState({
+      windowWidth: width,
+    })
+  }
+
   loadImage(images) {
     if (images.length) {
       let imagePath = require(`./static/images/${images[0]}`)
@@ -32,10 +42,32 @@ class App extends Component {
       img.onLoad = this.loadImage(images)
       img.src = imagePath
     } else {
-      this.setState({
-        loading: false,
-      })
+      setInterval(()=>{
+        this.setState({
+          loading: false,
+        })
+      },600)
     }
+  }
+
+  componentWillMount() {
+      this.updateDimensions()
+
+      let timeout = null
+
+      window.addEventListener("resize", (event) => {
+        if ( !timeout ) {
+          timeout = setTimeout(() => {
+            // Reset timeout
+            timeout = null
+            this.updateDimensions()
+          }, 66)
+        }
+      }, false)
+    }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.timeoutResizeEvent())
   }
 
   componentDidMount(){
@@ -50,9 +82,13 @@ class App extends Component {
         })
       })*/
 
+    this.setState({
+      posts: posts,
+    })
+
     let allImages = []
 
-    for (let i=0; i<posts.length; i++) {
+    for (let i=0; i < posts.length; i++) {
       if (posts[i].image) {
         allImages.push(posts[i].image)
       }
@@ -62,40 +98,6 @@ class App extends Component {
     }
 
     this.loadImage(allImages)
-
-    this.setState({
-      posts: posts,
-    })
-  }
-
-  updateDimensions() {
-    let width = document.documentElement.clientWidth || document.body.clientWidth
-     width = width < 340 ? 340 : width
-    width -= 40
-
-    this.setState({
-      windowWidth: width,
-    })
-  }
-
-  componentWillMount() {
-    this.updateDimensions()
-
-    let timeout = null
-
-    window.addEventListener("resize", (event) => {
-      if ( !timeout ) {
-        timeout = setTimeout(() => {
-          // Reset timeout
-          timeout = null
-          this.updateDimensions()
-        }, 66)
-      }
-    }, false)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.timeoutResizeEvent())
   }
 
   render() {
