@@ -1,0 +1,12 @@
+.post-tile-image-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px;
+  box-sizing: border-box;
+}

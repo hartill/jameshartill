@@ -81,7 +81,6 @@
     "size": "wide",
     "title": "Tiger X Ident",
     "image": "tiger-x-feature.jpg",
-    "short_desc": "3D animated ident for Tiger X.",
     "long_desc": [
       "One of a few animated identity videos I made for Tiger X in the UK.",
       "3D modelling and animation done in Cinema 4D.",
@@ -96,7 +95,6 @@
     "type": "project",
     "title": "Mtindo",
     "image": "mtindo-feature.jpg",
-    "short_desc": "Webshop design and build",
     "long_desc": [
       "A Wordpress + woocommerce webshop.",
       "Designed and built custom front-end."
@@ -111,7 +109,6 @@
     "title": "Popposites",
     "image": "html-5.png",
     "background_color": "#443642",
-    "short_desc": "HTML5 Game",
     "long_desc": [
       "A HTML5 Js game I developed to help children learn vocabulary.",
       "Programmed in vanilla Js."
@@ -119,5 +116,40 @@
     "category": "Vanilla Js",
     "external_url": "http://popposites.jameshartill.com",
     "github_url": "https://github.com/hartill/popposites"
+  },
+  {
+    "id": "9",
+    "status": "publish",
+    "type": "project",
+    "title": "HF4 drilled monopile installation",
+    "image": "hf4-monopile-feature.jpg",
+    "long_desc": [
+      "A promo video which shows the HF4 vessel carrying out a monopile installation.",
+      "Created in Solidworks, C4D and After Effects.",
+      "Created whilst working as a Technical Deigner at Mojo Maritime."
+    ],
+    "category": "Animation",
+    "external_url": "https://www.youtube.com/watch?v=JkufLpYoqGU"
+  },
+  {
+    "id": "10",
+    "status": "publish",
+    "type": "project",
+    "title": "HF4 Tidal Turbine Installation",
+    "image": "hf4-turbine-feature.jpg",
+    "long_desc": [
+      "A promo video showing the HF4 vessel installing a Voith tidal turbine.",
+      "Created in Solidworks, C4D and After Effects.",
+      "Created whilst working as a Technical Deigner at Mojo Maritime."
+    ],
+    "category": "Animation",
+    "external_url": "https://www.youtube.com/watch?v=csK6FPj1qR4"
+  },
+  {
+    "id": "11",
+    "status": "publish",
+    "type": "photo",
+    "image": "porthtowan4.jpg",
+    "category": "Photography"
   }
 ]
