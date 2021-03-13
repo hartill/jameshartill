@@ -20,7 +20,7 @@
     ],
     "category": "ReactJs",
     "github_url": "https://github.com/hartill/leben-quiz",
-    "external_url": "http://lebenindeutschland.org"
+    "external_url": "http://www.lebenindeutschland.org"
   },
   {
     "id": "2",
@@ -46,11 +46,9 @@
     "image": "open-school-feature.png",
     "short_desc": "An Online Leaning Application for Children.",
     "long_desc": [
-      "The Open School is a development project I have worked on since 2010.",
-      "It is an e-learning website for children built in wordpress with custom theme and plugin developments."
+      "The Open School was an e-learning application I developed and maintained from 2010 to 2017."
     ],
-    "category": "Wordpress",
-    "external_url": "http://openschool.uk"
+    "category": "Wordpress"
   },
   {
     "id": "4",
@@ -91,7 +89,7 @@
   },
   {
     "id": "7",
-    "status": "publish",
+    "status": "draft",
     "type": "project",
     "title": "Mtindo",
     "image": "mtindo-feature.jpg",

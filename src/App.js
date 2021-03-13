@@ -82,18 +82,25 @@ class App extends Component {
         })
       })*/
 
+    let publishedPosts = []
+    posts.forEach(function(post){
+      if(post.status === 'publish') {
+        publishedPosts.push(post);
+      }
+    })
+
     this.setState({
-      posts: posts,
+      posts: publishedPosts,
     })
 
     let allImages = []
 
-    for (let i=0; i < posts.length; i++) {
-      if (posts[i].image) {
-        allImages.push(posts[i].image)
+    for (let i=0; i < publishedPosts.length; i++) {
+      if (publishedPosts[i].image) {
+        allImages.push(publishedPosts[i].image)
       }
       if (posts[i].small_image) {
-        allImages.push(posts[i].small_image)
+        allImages.push(publishedPosts[i].small_image)
       }
     }
 
